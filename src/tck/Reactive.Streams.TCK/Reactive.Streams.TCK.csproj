@@ -3,14 +3,12 @@
   <PropertyGroup>
     <AssemblyName>Reactive.Streams.TCK</AssemblyName>
     <Description>Reactive Streams Technology Compatibility Kit</Description>
-    <Copyright>MIT-0</Copyright>
     <VersionPrefix>1.0.3</VersionPrefix>
-    <Authors>Reactive Streams</Authors>
-    <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFramework>$(LibraryFramework)</TargetFramework>
     <PackageTags>reactive;stream</PackageTags>
-    <PackageProjectUrl>https://github.com/reactive-streams/reactive-streams-dotnet</PackageProjectUrl>
-    <PackageLicenseUrl>http://creativecommons.org/publicdomain/zero/1.0/</PackageLicenseUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.7.1" />
+    <PackageReference Include="NUnit" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

@@ -323,7 +323,8 @@ namespace Reactive.Streams.TCK
                     gotNpe = true;
                 }
 
-                Assert.True(gotNpe, "OnSubscribe(null) did not throw ArgumentNullException");
+                if (!gotNpe)
+                    throw new AssertionException("OnSubscribe(null) did not throw ArgumentNullException");
                 _environment.VerifyNoAsyncErrorsNoDelay();
             });
 
@@ -347,7 +348,8 @@ namespace Reactive.Streams.TCK
                     gotNpe = true;
                 }
 
-                Assert.True(gotNpe, "OnNext(null) did not throw ArgumentNullException");
+                if (!gotNpe)
+                    throw new AssertionException("OnNext(null) did not throw ArgumentNullException");
                 _environment.VerifyNoAsyncErrorsNoDelay();
             });
 
@@ -367,7 +369,8 @@ namespace Reactive.Streams.TCK
                     gotNpe = true;
                 }
 
-                Assert.True(gotNpe, "OnError(null) did not throw ArgumentNullException");
+                if (!gotNpe)
+                    throw new AssertionException("OnError(null) did not throw ArgumentNullException");
                 _environment.VerifyNoAsyncErrorsNoDelay();
             });
 

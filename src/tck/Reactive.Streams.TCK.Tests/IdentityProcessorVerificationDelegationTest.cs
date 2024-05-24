@@ -48,7 +48,8 @@ namespace Reactive.Streams.TCK.Tests
                 message.AppendLine("[Test]");
                 message.AppendLine($"public void {targetTest} () => delegate{targetClass.Name}.{targetTest}();");
 
-                Assert.True(TestsInclude(allTests, targetTest), message.ToString());
+                if (!TestsInclude(allTests, targetTest))
+                    throw new AssertionException(message.ToString());
             }
         }
 
