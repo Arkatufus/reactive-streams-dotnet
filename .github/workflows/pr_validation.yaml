@@ -47,9 +47,9 @@ jobs:
         shell: bash
         run: |
           if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
-            dotnet test -c Release --framework net6.0
+            dotnet test -c Release --framework net6.0 ./src/Reactive.Streams.sln
           else
-            dotnet test -c Release
+            dotnet test -c Release ./src/Reactive.Streams.sln
           fi
 
       - name: "dotnet pack"
