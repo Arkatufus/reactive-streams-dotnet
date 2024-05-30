@@ -3,7 +3,6 @@
  ***************************************************/
 using System.Linq;
 using NUnit.Framework;
-using Reactive.Streams.Example.Unicast;
 
 namespace Reactive.Streams.TCK.Tests
 {
