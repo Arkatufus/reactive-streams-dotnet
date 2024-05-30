@@ -1,8 +1,8 @@
 ﻿<Project>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Generated.props', '$(MSBuildThisFileDirectory)'))" />
+    
     <PropertyGroup>
         <Authors>Reactive Streams</Authors>
-        <VersionPrefix>1.0.3</VersionPrefix>
-        <PackageReleaseNotes/>
         <PackageProjectUrl>https://github.com/akkadotnet/reactive-streams-dotnet</PackageProjectUrl>
         <PackageLicenseExpression>MIT-0</PackageLicenseExpression>
         <NoWarn>$(NoWarn);CS1591</NoWarn>
