@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\api\Reactive.Streams\Reactive.Streams.csproj" />
-    <ProjectReference Include="..\..\examples\Reactive.Streams.Example.Unicast\Reactive.Streams.Example.Unicast.csproj" />
   </ItemGroup>
 
   <ItemGroup>

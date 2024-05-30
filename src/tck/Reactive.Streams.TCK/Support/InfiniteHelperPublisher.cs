@@ -4,7 +4,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Reactive.Streams.Example.Unicast;
 
 namespace Reactive.Streams.TCK.Support
 {
