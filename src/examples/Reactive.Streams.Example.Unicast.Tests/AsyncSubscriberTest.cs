@@ -33,7 +33,8 @@ namespace Reactive.Streams.Example.Unicast.Tests
             var subscriber = new AccSubscriber(i, latch);
             new NumberIterablePublisher(0,10).Subscribe(subscriber);
             latch.Wait(TimeSpan.FromMilliseconds(Environment.DefaultTimeoutMilliseconds*10));
-            Assert.AreEqual(45, i.Current);
+            if (i.Current != 45)
+                throw new AssertionException($"Expected 45, got {i.Current}");
         }
 
         private sealed class AccSubscriber : AsyncSubscriber<int?>

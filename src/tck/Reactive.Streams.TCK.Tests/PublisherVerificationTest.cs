@@ -508,7 +508,8 @@ namespace Reactive.Streams.TCK.Tests
             verification.Required_spec317_mustNotSignalOnErrorWhenPendingAboveLongMaxValue();
 
             // 11 due to the implementation of this particular TCK test (see impl)
-            Assert.AreEqual(11, sent.Current);
+            if (sent.Current != 11)
+                throw new AssertionException($"Expected 11, got {sent.Current}");
         }
 
         // FAILING IMPLEMENTATIONS //

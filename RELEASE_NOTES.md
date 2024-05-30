@@ -1,4 +1,4 @@
-#### 1.0.2 - 07.04.2017
+#### 1.0.2 - 07.04.2017 ####
 
 Reactive.Streams
  - Stable release
@@ -10,7 +10,7 @@ Reactive.Streams.TCK
  - Skip §2.13 for value types #34
  - Fail NextN with the correct error message if timeout is reached #36
 	
-#### 1.0.0-RC1 - 04.07.2016
+#### 1.0.0-RC1 - 04.07.2016 ####
 
 Reactive.Streams 
  - Support for PCL Profile7

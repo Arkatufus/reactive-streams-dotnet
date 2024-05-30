@@ -1,0 +1,38 @@
+﻿<Project>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Generated.props', '$(MSBuildThisFileDirectory)'))" />
+    
+    <PropertyGroup>
+        <Authors>Reactive Streams</Authors>
+        <PackageProjectUrl>https://github.com/akkadotnet/reactive-streams-dotnet</PackageProjectUrl>
+        <PackageLicenseExpression>MIT-0</PackageLicenseExpression>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <LibraryFramework>netstandard2.0</LibraryFramework>
+        <TestNetFxFramework>net462</TestNetFxFramework>
+        <TestNetFramework>net6.0</TestNetFramework>
+    </PropertyGroup>
+
+    <!-- SourceLink support for all Akka.NET projects -->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)\..\README.md" Pack="true" Visible="false" PackagePath="\" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+</Project>

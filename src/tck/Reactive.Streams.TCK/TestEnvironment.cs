@@ -150,7 +150,7 @@ namespace Reactive.Streams.TCK
         {
             try
             {
-                Assert.Fail(message);
+                throw new AssertionException(message);
             }
             catch (Exception ex)
             {
@@ -174,7 +174,7 @@ namespace Reactive.Streams.TCK
         {
             try
             {
-                Assert.Fail(message, exception);
+                throw new AssertionException(message, exception);
             }
             catch (Exception)
             {
@@ -198,7 +198,7 @@ namespace Reactive.Streams.TCK
         {
             try
             {
-                Assert.Fail(exception.Message, exception);
+                throw new AssertionException(exception.Message, exception);
             }
             catch (Exception)
             {
@@ -222,12 +222,12 @@ namespace Reactive.Streams.TCK
         {
             try
             {
-                Assert.Fail(message);
+                throw new AssertionException(message);
             }
             catch (Exception ex)
             {
                 AsyncErrors.Enqueue(ex);
-                Assert.Fail(message, ex);
+                throw new AssertionException(message, ex);
             }
 
             return default(T); // unreachable, the previous block will always exit by throwing
@@ -306,11 +306,10 @@ namespace Reactive.Streams.TCK
         {
             foreach (var error in AsyncErrors)
             {
-                var exception = error as AssertionException;
-                if (exception != null)
+                if (error is AssertionException exception)
                     throw exception;
 
-                Assert.Fail($"Async error during test execution: {error.Message}", error);
+                throw new AssertionException($"Async error during test execution: {error.Message}", error);
             }
         }
 
