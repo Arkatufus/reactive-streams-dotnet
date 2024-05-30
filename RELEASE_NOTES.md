@@ -1,3 +1,8 @@
+#### 1.0.4 - 30th May 2024 ####
+
+Reactive.Streams.TCK
+   - Remove dependency to Reactive.Streams.Example.Unicast
+
 #### 1.0.3 - 30th May 2024 ####
 
 Reactive.Streams
