@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{8511E402-A25A-48
 		..\Relicensing.txt = ..\Relicensing.txt
 		global.json = global.json
 		Directory.Generated.props = Directory.Generated.props
+		NuGet.Config = NuGet.Config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A82A5E19-1495-4662-B684-DEFA107C42B4}"
