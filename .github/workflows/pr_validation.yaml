@@ -53,4 +53,4 @@ jobs:
           fi
 
       - name: "dotnet pack"
-        run: dotnet pack -c Release --no-build
+        run: dotnet pack -c Release --no-build ./src/Reactive.Streams.sln
