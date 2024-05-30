@@ -31,7 +31,7 @@ jobs:
       - name: "Install .NET SDK"
         uses: actions/setup-dotnet@v4.0.0
         with:
-          global-json-file: "./global.json"
+          global-json-file: "./src/global.json"
 
       - name: "Update release notes"
         shell: pwsh
@@ -39,7 +39,7 @@ jobs:
           ./build.ps1
 
       - name: "dotnet build"
-        run: dotnet build -c Release
+        run: dotnet build -c Release ./src/Reactive.Streams.sln
 
       # .NET Framework tests can't run reliably on Linux, so we only do .NET 6
 
@@ -47,10 +47,10 @@ jobs:
         shell: bash
         run: |
           if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
-            dotnet test -c Release --framework net6.0
+            dotnet test -c Release --no-build --framework net6.0 ./src/Reactive.Streams.sln
           else
-            dotnet test -c Release
+            dotnet test -c Release --no-build ./src/Reactive.Streams.sln
           fi
 
       - name: "dotnet pack"
-        run: dotnet pack -c Release
+        run: dotnet pack -c Release --no-build ./src/Reactive.Streams.sln
