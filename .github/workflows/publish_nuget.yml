@@ -16,10 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4
+
+    - name: "Install .NET SDK"
+      uses: actions/setup-dotnet@v4.0.0
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+        global-json-file: "./src/global.json"
 
     - name: "Update release notes"
       shell: pwsh
