@@ -1,3 +1,14 @@
+#### 1.0.3 - 30th May 2024 ####
+
+Reactive.Streams
+   - Update target framework to .NET Standard 2.0
+
+Reactive.Streams.TCK
+   - Update target framework to .NET Standard 2.0
+   - Bump NUnit version from 3.7.1 to 3.13.3
+   - Add compatibility for NUnit 4
+   - Remove code behavior dependency that are specific to NUnit 3.7.1
+
 #### 1.0.2 - 07.04.2017 ####
 
 Reactive.Streams
